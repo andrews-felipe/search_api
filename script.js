@@ -6,7 +6,7 @@ app.appendChild(container);
 
 var request = new XMLHttpRequest();
 
-request.open("GET", "http://apis.io/api/apis", true);
+request.open("GET", "https://apis.io/api/apis", true);
 
 request.onload = function () {
   let { data } = JSON.parse(this.response);
