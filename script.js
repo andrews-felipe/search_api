@@ -55,14 +55,23 @@ request.onload = function () {
 
       // Criando Elemento para descrição
       const p = document.createElement("p");
+      p.setAttribute("class", "text__description");
       item.description = item.description.substring(0, 100);
       p.textContent = `${item.description}...`;
+
+      // Criando hyper link para a página da API
+      const link = document.createElement("a");
+      const text_link = document.createElement("p");
+      text_link.textContent = "Visitar Página";
+      link.href = item.humanURL;
+      link.appendChild(text_link);
 
       // Manipulando DOM para inserção dos itens
       container.appendChild(card);
       card.appendChild(containerImg);
       card.appendChild(h1);
       card.appendChild(p);
+      card.appendChild(link);
     });
   } else {
     const errorMessage = document.createElement("marquee");
